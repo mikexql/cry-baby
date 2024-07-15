@@ -24,6 +24,7 @@ class CryBabyService(ports.Service):
         self.repository = repository
         self.audio_file_client = audio_file_client
         self.thread = None
+        self._running = threading.Event()
 
     def evaluate_from_microphone(self) -> float:
         """
@@ -32,26 +33,36 @@ class CryBabyService(ports.Service):
         """
         self.logger.info("Service beginning to evaluate audio from microphone")
         audio_file = self.recorder.record()
-        return self.classifier.classify(audio_file)
+        self.logger.info(f"Recorded audio file: {audio_file}")
+        prediction = self.classifier.classify(audio_file)
+        self.logger.info(f"Prediction: {prediction}")
+        return prediction
 
     def continuously_evaluate_from_microphone(self) -> Optional[queue.Queue]:
         file_written_notification_queue = self.recorder.continuously_record()
+        self._running.set()
         signal_thread = threading.Thread(
             target=self._handle_files_written,
             args=(file_written_notification_queue, self.classifier),
         )
-        signal_thread.daemon = True
         signal_thread.start()
         self.logger.info(
             "Service beginning to continuously evaluate audio from system audio"
         )
         self.thread = signal_thread
+        return file_written_notification_queue
 
     def _handle_files_written(
         self, file_written_queue: queue.Queue, classifier: ports.Classifier
     ):
-        while True:
-            file_path: pathlib.Path = file_written_queue.get()
+        while self._running.is_set():
+            try:
+                file_path: pathlib.Path = file_written_queue.get(timeout=1)
+            except queue.Empty:
+                continue
+            if not self._running.is_set():
+                break
+            self.logger.info(f"Processing file: {file_path}")
             # TODO: Sampling rate, and threshold DB, should not be hardcoded
             if not self.audio_file_client.check_audio_loudness(
                 file_path, threshold_db=48, sampling_rate_hz=16000
@@ -68,6 +79,8 @@ class CryBabyService(ports.Service):
 
     def stop_continuous_evaluation(self):
         self.logger.info("Service stopping continuous evaluation")
+        self._running.clear()
         if self.thread is not None:
             self.thread.join()
             self.thread = None
+        self.logger.info("Continuous evaluation stopped")

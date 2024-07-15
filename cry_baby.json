@@ -83,5 +83,105 @@
         "timestamp": "2024-07-15T12:52:14.378376",
         "audio_file_path": "/home/mike/Desktop/cry-baby/audio/f87a80c9-c0a2-49a0-a57a-e00d57049f06.wav",
         "prediction": 2.4481475975335343e-06
+    },
+    {
+        "timestamp": "2024-07-15T14:21:43.740446",
+        "audio_file_path": "/home/mike/Desktop/cry-baby/audio/b4420c16-fa2e-430e-aaf4-eb6ab612646c.wav",
+        "prediction": 1.6393938722103485e-06
+    },
+    {
+        "timestamp": "2024-07-15T14:21:59.639346",
+        "audio_file_path": "/home/mike/Desktop/cry-baby/audio/7092b7a5-3d05-4914-8f7f-ff16e4512d15.wav",
+        "prediction": 4.914366513730783e-07
+    },
+    {
+        "timestamp": "2024-07-15T14:22:16.070003",
+        "audio_file_path": "/home/mike/Desktop/cry-baby/audio/1efed42e-ea32-4c17-9916-f14db953eb96.wav",
+        "prediction": 2.421059434709605e-06
+    },
+    {
+        "timestamp": "2024-07-15T14:31:18.187312",
+        "audio_file_path": "/home/mike/cry-baby/records/bae4be3c-cacd-4ee9-8841-d05308d47868.wav",
+        "prediction": 2.4624750949442387e-07
+    },
+    {
+        "timestamp": "2024-07-15T14:31:34.041243",
+        "audio_file_path": "/home/mike/cry-baby/records/e0ebc14b-b940-4695-a542-55e2b14f1c10.wav",
+        "prediction": 6.232214104784362e-07
+    },
+    {
+        "timestamp": "2024-07-15T14:31:48.808707",
+        "audio_file_path": "/home/mike/cry-baby/records/5ae8d412-ce65-4677-8236-d6e38af4d68f.wav",
+        "prediction": 1.449171236345137e-07
+    },
+    {
+        "timestamp": "2024-07-15T14:32:03.964517",
+        "audio_file_path": "/home/mike/cry-baby/records/f818998f-6f37-4af8-a7c4-a58d7eaf7aca.wav",
+        "prediction": 8.708477139407478e-08
+    },
+    {
+        "timestamp": "2024-07-15T14:32:18.884550",
+        "audio_file_path": "/home/mike/cry-baby/records/f89c33c7-99c3-454e-b025-a987599ec72e.wav",
+        "prediction": 1.127101256770402e-07
+    },
+    {
+        "timestamp": "2024-07-15T14:32:34.456528",
+        "audio_file_path": "/home/mike/cry-baby/records/821e8578-edc2-4957-8ff7-c29291a8cc72.wav",
+        "prediction": 1.9940664230944094e-07
+    },
+    {
+        "timestamp": "2024-07-15T14:32:50.126098",
+        "audio_file_path": "/home/mike/cry-baby/records/f095d28b-8184-41e6-9905-7cffb6916a6e.wav",
+        "prediction": 4.858864031120902e-07
+    },
+    {
+        "timestamp": "2024-07-15T14:33:07.203762",
+        "audio_file_path": "/home/mike/cry-baby/records/464c085d-6aa0-4b2f-9787-c76401d35009.wav",
+        "prediction": 1.157216502178926e-06
+    },
+    {
+        "timestamp": "2024-07-15T14:33:23.298736",
+        "audio_file_path": "/home/mike/cry-baby/records/629e77b4-feb3-4887-8f3c-6ca9a3a8ee76.wav",
+        "prediction": 6.035373303348024e-07
+    },
+    {
+        "timestamp": "2024-07-15T14:36:57.708002",
+        "audio_file_path": "/home/mike/Desktop/cry-baby/audio/1ee937cb-2ec2-4187-b6d1-9b481fc53282.wav",
+        "prediction": 5.2193257715771324e-08
+    },
+    {
+        "timestamp": "2024-07-15T14:37:16.525281",
+        "audio_file_path": "/home/mike/Desktop/cry-baby/audio/8fd7f73a-63e6-4880-8757-56dd1398e782.wav",
+        "prediction": 2.4616204541416664e-07
+    },
+    {
+        "timestamp": "2024-07-15T14:37:31.839432",
+        "audio_file_path": "/home/mike/Desktop/cry-baby/audio/d8cfe3ce-f84f-483a-86c3-3d87d7f406ea.wav",
+        "prediction": 5.23841038102546e-07
+    },
+    {
+        "timestamp": "2024-07-15T14:37:48.624326",
+        "audio_file_path": "/home/mike/Desktop/cry-baby/audio/8418889c-2f28-4124-a93e-fbdf2e5eeee7.wav",
+        "prediction": 1.0728107469049064e-07
+    },
+    {
+        "timestamp": "2024-07-15T14:38:03.668164",
+        "audio_file_path": "/home/mike/Desktop/cry-baby/audio/776e3443-1665-47ee-849a-0a80b9840cec.wav",
+        "prediction": 2.208057878760883e-07
+    },
+    {
+        "timestamp": "2024-07-15T14:38:18.707795",
+        "audio_file_path": "/home/mike/Desktop/cry-baby/audio/54b56deb-9b40-491d-b3a0-0fb3af68f0d4.wav",
+        "prediction": 1.1603926850511925e-06
+    },
+    {
+        "timestamp": "2024-07-15T14:38:33.532699",
+        "audio_file_path": "/home/mike/Desktop/cry-baby/audio/147a04a2-111f-48f5-8bba-a94fdef700b4.wav",
+        "prediction": 1.0107710295415018e-06
+    },
+    {
+        "timestamp": "2024-07-15T14:38:48.579670",
+        "audio_file_path": "/home/mike/Desktop/cry-baby/audio/70d4fc95-1f17-46f8-b7cd-e7edfed48295.wav",
+        "prediction": 2.267165655212011e-06
     }
 ]

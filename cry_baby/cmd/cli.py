@@ -32,6 +32,10 @@ def tflite_runtime_available():
     return tflite_spec is not None
 
 
+import threading
+
+SHUTDOWN_EVENT = threading.Event()
+
 def run_continously(
     logger: ColorfulCLILogger,
     recorder: PyaudioRecorder,
@@ -47,18 +51,20 @@ def run_continously(
         audio_file_client=audio_file_client,
     )
     logger.info("Starting to continuously evaluate from system audio")
-    while not SHUTDOWN_EVENT.is_set():
-        try:
-            service.continuously_evaluate_from_microphone()
-            logger.info("Press ctrl+c to stop")
-            SHUTDOWN_EVENT.wait()
-        except KeyboardInterrupt:
-            logger.info("Stopping CryBabyService")
-            service.stop_continuous_evaluation()
-            logger.debug("CryBabyService has stopped")
-            SHUTDOWN_EVENT.set()
-            logger.debug("Exiting")
-
+    try:
+        service.continuously_evaluate_from_microphone()
+        logger.info("Press Ctrl+C to stop")
+        while not SHUTDOWN_EVENT.is_set():
+            SHUTDOWN_EVENT.wait(1)
+    except KeyboardInterrupt:
+        logger.info("Interrupted by user, shutting down")
+        SHUTDOWN_EVENT.set()
+    finally:
+        service.stop_continuous_evaluation()
+        logger.info("Service stopped")
+        # Explicitly exit the program
+        import sys
+        sys.exit(0)
 
 def main():
     logger = ColorfulCLILogger()
@@ -119,3 +125,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
